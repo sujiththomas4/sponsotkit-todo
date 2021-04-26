@@ -32,7 +32,7 @@ body {
   width: calc(100% - 260px);
   transition: .33s,cubic-bezier(.685,.0473,.346,1);
   padding: 15px;
-  margin-top: 57px;
+  margin-top: 15px;
 }
 .nav-item{
   cursor: pointer;
@@ -241,6 +241,9 @@ background-color: #66bb6a;
   position: absolute;
   right: 5px;
   bottom: 3px;
+}
+.td-actions {
+  width: 74px;
 }
 /* .todoTblRRows.new{
 border-left :8px solid rgba(253,151,19,.5) !important;
