@@ -55,7 +55,8 @@
     				
       <div class="widget-header">
         <i class="icon-th-list"></i>
-        <h3>{{#each getActiveTodoCategory}}
+        <h3>
+          {{#each getActiveTodoCategory}}
           <i class="material-icons iconHeadtab" style="color: {{iconColor}}">{{iconClass}}</i>{{title}}
           {{/each}}
           </h3>
@@ -71,17 +72,19 @@
               <th class="todoTableTH todoTableTH_Desc">Description</th>
               <th class="todoTableTH todoTableTH_due">Created date</th>
               <th class="todoTableTH todoTableTH_due">Due date</th>
+              <th class="todoTableTH todoTableTH_status">Status</th>
               <th class="todoTableTH td-actions"></th>
             </tr>
           </thead>
           <tbody>
             {{#each Notes}}
-            <tr>
-              <td><input type="checkbox" /></td>
-              <td>{{title}}</td>
+            <tr class="todoTblRRows {{status}}">
+              <td><input type="checkbox" name="tableStatusCheck" checked={{checkStatus}} class="todoTblCheck"/></td>
+              <td style="position: relative;">{{title}}  <i class="material-icons todoTblRRowsIc" style="color : {{getIconForCatColor}}">{{getIconForcat}}</i>	</td>
               <td>{{description}}</td>
               <td>{{#if created}}{{created.getMonth}}/{{created.getDate}}/{{created.getFullYear}}{{/if}}</td>
               <td>{{#if dueDate}} {{dueDate.getMonth}}/{{dueDate.getDate}}/{{dueDate.getFullYear}}{{/if}}</td>
+              <td><div class="todoTblStatus {{status}}"></div></td>
               <td class="td-actions">
                 <a >
                   <i class="material-icons notesActionBtn notesActionBtnEdit">edit</i>								
@@ -120,7 +123,7 @@
             <i class="material-icons">fiber_new</i>
           </div>
           <p class="card-category">New</p>
-          <h3 class="card-title">49/50
+          <h3 class="card-title">{{newNotes}}/{{totalNotes}}
           </h3>
         </div>
         <div class="card-footer">
@@ -137,7 +140,7 @@
             <i class="material-icons">check</i>
           </div>
           <p class="card-category">Completed</p>
-          <h3 class="card-title">49/50
+          <h3 class="card-title">{{closedNotes}}/{{totalNotes}}
           </h3>
         </div>
         <div class="card-footer">
@@ -154,7 +157,7 @@
             <i class="material-icons">access_time</i>
           </div>
           <p class="card-category">Due soon</p>
-          <h3 class="card-title">49/50
+          <h3 class="card-title">0/{{totalNotes}}
           </h3>
         </div>
         <div class="card-footer">

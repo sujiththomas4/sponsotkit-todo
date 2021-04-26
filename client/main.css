@@ -224,6 +224,30 @@ th.todoTableTH {
   color: #5fbdc7;
   cursor: pointer;
 }
+.todoTblStatus {
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  border-radius: 50%;
+}
+.todoTblStatus.new{
+background-color: #fd9713;
+}
+.todoTblStatus.closed{
+background-color: #66bb6a;
+}
+.todoTblRRowsIc{
+  font-size: 1em !important;
+  position: absolute;
+  right: 5px;
+  bottom: 3px;
+}
+/* .todoTblRRows.new{
+border-left :8px solid rgba(253,151,19,.5) !important;
+}
+.todoTblRRows.closed{
+  border-left :8px solid rgba(102,187,106,.5) !important;
+} */
 
 
 /* modal */
